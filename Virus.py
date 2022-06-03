@@ -13,7 +13,7 @@ class Virus:
 
 
     """
-    Tries to obtain informations about the hosting system to adapt it's behavior.
+    Tries to obtain information about the hosting system to adapt it's behavior.
     """
     def __init__(self):
 
@@ -22,7 +22,7 @@ class Virus:
         self.userName       = None
         self.adminMode      = None
 
-        self.informations   = ""
+        self.information   = ""
 
 
     """
@@ -33,8 +33,8 @@ class Virus:
         try:
     
             self.systemInfos = (platform.system(), platform.release())
-            self.informations += "OS : " + self.systemInfos[0] + "\n"
-            self.informations += "Version : " + self.systemInfos[1] + "\n"
+            self.information += "OS : " + self.systemInfos[0] + "\n"
+            self.information += "Version : " + self.systemInfos[1] + "\n"
 
         except:
 
@@ -49,7 +49,7 @@ class Virus:
         try:
     
             self.computerName = socket.gethostname()
-            self.informations += "Computer ID : " + self.computerName + "\n"
+            self.information += "Computer ID : " + self.computerName + "\n"
 
         except:
 
@@ -64,7 +64,7 @@ class Virus:
         try:
     
             self.userName = os.getenv('username')
-            self.informations += "User ID : " + self.userName + "\n"
+            self.information += "User ID : " + self.userName + "\n"
 
         except:
 
@@ -81,11 +81,11 @@ class Virus:
             if ctypes.windll.shell32.IsUserAnAdmin() == 1:
 
                 self.adminMode = True
-                self.informations += "Admin : YES\n" 
+                self.information += "Admin : YES\n" 
             
             else:
 
-                self.informations += "Admin : NO\n" 
+                self.information += "Admin : NO\n" 
 
         except:
 
@@ -93,11 +93,11 @@ class Virus:
     
 
     """
-    Displays informations gathered for debug purposes.
+    Displays information gathered for debug purposes.
     """
-    def displayInformations(self):
+    def displayInformation(self):
 
-        print(self.informations)
+        print(self.information)
     
     
     # Code detected by Windows Defender --------------------------------------------------------------
@@ -113,7 +113,7 @@ class Virus:
 
 
     """
-    Grabs informations, then tries multiple vectors of attack.
+    Grabs information, then tries multiple vectors of attack.
     """
     def run(self):
 
@@ -128,6 +128,6 @@ class Virus:
 """
 virus = Virus()
 virus.run()
-virus.displayInformations()
+virus.displayInformation()
 
 time.sleep(5)
