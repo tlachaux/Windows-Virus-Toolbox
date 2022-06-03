@@ -1,3 +1,4 @@
 # Windows-Virus-Toolbox
-EPITECH project
+EPITECH project.
+
 Please, do not use it to hack the NSA :D
